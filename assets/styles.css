@@ -1,0 +1,321 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+nav .logo img {
+    height: 40px;
+}
+
+nav .nav-links {
+    list-style: none;
+    display: flex;
+}
+
+nav .nav-links li {
+    margin-left: 20px;
+}
+
+nav .nav-links a {
+    color: rgb(12, 107, 99);
+    text-decoration: none;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: 0.4s;
+}
+
+nav .nav-links a:hover {
+    color: #000000;
+    font-weight: 600;
+}
+
+
+/* Main Content */
+.content {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Services Section */
+.services {
+    margin: 20px 0;
+}
+
+.services h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.service-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.service-card {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: calc(33% - 20px); /* Three cards per row, adjust as needed */
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: 0.4s;
+    border-radius: 10px;
+}
+
+.service-card:hover {
+    transform: scale(2);
+}
+.service-card img {
+    width: auto;
+    height: 150px; /* Adjust height */
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.service-card h3 {
+    margin: 10px 0;
+}
+
+.service-card p {
+    color: #555;
+}
+
+/* Chatbot Container */
+.chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 350px;
+    height: 300px; /* Initial height for mobile view */
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: height 0.3s ease; /* Smooth transition for height change */
+}
+
+.chatbot-header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chatbot-body {
+    padding: 10px;
+    flex-grow: 1;
+    overflow-y: auto;
+    max-height: calc(100% - 70px); /* Adjust based on header and input size */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Messages */
+.user-message, .bot-message {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    max-width: 80%;
+}
+
+.user-message {
+    background-color: #17d6f0;
+    align-self: flex-end; /* Right alignment */
+    text-align: right;
+}
+
+.bot-message {
+    background-color: #f1f4f5;
+    align-self: flex-start; /* Left alignment */
+    text-align: left;
+}
+
+/* Adjust alignment of messages */
+.chatbot-body .user-message {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.chatbot-body .bot-message {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+/* Suggestions */
+.chatbot-suggestions {
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    display: flex;
+    flex-wrap: wrap; /* Allow buttons to wrap if necessary */
+}
+
+.suggestion-btn {
+    background-color: #eee;
+    border: 1px solid #ccc;
+    padding: 8px 12px;
+    margin-right: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+.suggestion-btn:hover {
+    background-color: #ddd;
+}
+
+/* Chatbot Input */
+.chatbot-input {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+}
+
+.chatbot-input input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.chatbot-input button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.chatbot-input button:hover {
+    background-color: #555;
+}
+
+/* Add to your CSS */
+.open-chat-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.open-chat-btn:hover {
+    background-color: #555;
+}
+
+/* Hide Chatbot Button */
+#close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .chatbot-container {
+        width: 100%;
+        height: 300px; /* Initial height for mobile view */
+        bottom: 0;
+        right: 0;
+        border-radius: 0;
+    }
+
+    .chatbot-body {
+        max-height: calc(300px - 70px); /* Adjust based on header and input size */
+    }
+
+    .service-card {
+        width: calc(100% - 20px); /* Full width minus some margin */
+        height: auto; /* Allow height to adjust based on content */
+        display: block; /* Full width on small screens */
+    }
+
+    .service-card img {
+        height: 150px; /* Adjust height as needed */
+        width: auto; /* Maintain aspect ratio */
+        margin-bottom: 15px;
+    }
+
+    .service-card h3 {
+        font-size: 1.2em; /* Slightly smaller font size */
+        margin: 10px 0;
+    }
+
+    .service-card p {
+        font-size: 1em; /* Adjust font size for better readability */
+        color: #555;
+    }
+}
+/* Toggle Button */
+#toggle-chat-btn {
+    display: none; /* Hidden by default; will be shown when chatbox is hidden */
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('assets/hero-background.jpg') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    background-color: #17d6f0;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #15b0d2;
+}

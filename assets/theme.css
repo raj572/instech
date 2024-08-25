@@ -1,0 +1,63 @@
+/* Theme Toggle Button */
+
+
+#theme-toggle-btn {
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+#theme-toggle-btn:hover {
+    background-color: #555;
+}
+
+/* Icons for different themes */
+#theme-icon {
+    transition: opacity 0.3s;
+}
+
+
+/* Global Theme Styles */
+.light-mode {
+    --background-color: #f4f4f4;
+    --text-color: #333;
+    transition: 0.5s;
+}
+
+.dark-mode {
+    --background-color: #333;
+    --text-color: #f4f4f4;
+    transition: 0.5s;
+}
+
+.theme-blue {
+    --background-color: #17d6f0;
+    --text-color: #000000;
+    transition: 0.5s;
+}
+
+.theme-green {
+    --background-color: #28a745;
+    --text-color: #fff;
+    transition: 0.5s;
+}
+
+/* Apply Global Styles */
+
+
+/* Exclude Chatbox from Theme Changes */
+.chatbox-container {
+    background-color: rgba(red, green, blue, alpha); /* Ensure the chatbox background remains unaffected */
+    color: #000; /* Ensure text in chatbox remains unaffected */
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}

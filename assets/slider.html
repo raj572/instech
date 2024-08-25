@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.slider {
+  width: 100%;
+  position: relative;
+  height: var(--height);
+  overflow: hidden;
+  mask-image: linear-gradient(to right,transparent,#000,transparent);
+  z-index: 4; /* Ensure slider is below other elements */
+}
+.slider .list {
+  display: flex;
+  width: 100%;
+  min-width: calc(var(--width) * var(--quantity));
+  position: relative;
+  z-index: 5;
+}
+.slider .list .item {
+  width: var(--width);
+  height: var(--height);
+  position: absolute;
+  left: 100%; 
+  transition: filter 0.5s;
+  animation: autorun 18s linear infinite;
+  animation-delay: calc((18s/var(--quantity)) * (var(--position) - 1))!important;
+}
+.slider .list .item img {
+  width: 100%;
+  border-radius: 5px;
+  filter: grayscale(1);
+  transition: 0.5s;
+}
+.slider .list .item img:hover {
+  filter: none;
+  position: relative;
+  z-index: 3;
+}
+@keyframes autorun {
+  from {
+    left: 100%;
+  } 
+  to {
+    left: calc(var(--width) * -1);
+  }
+}
+.slider:hover .item {
+  animation-play-state: paused;
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="slider" id="included-section" style="
+        --width:200px;
+        --height: 160px;
+        --quantity:9;
+        ">
+        <div class="list">
+            <div class="item" style="--position: 1"><img src="./static/images/1.jpg" alt=""></div>
+            <div class="item" style="--position: 2"><img src="./static/images/2.jpg" alt=""></div>
+            <div class="item" style="--position: 3"><img src="./static/images/3.jpg" alt=""></div>
+            <div class="item" style="--position: 4"><img src="./static/images/4.jpg" alt=""></div>
+            <div class="item" style="--position: 5"><img src="./static/images/5.jpg" alt=""></div>
+            <div class="item" style="--position: 6"><img src="./static/images/6.jpg" alt=""></div>
+            <div class="item" style="--position: 7"><img src="./static/images/7.jpg" alt=""></div>
+            <div class="item" style="--position: 8"><img src="./static/images/8.jpg" alt=""></div>
+            <div class="item" style="--position: 9"><img src="./static/images/9.jpg" alt=""></div>
+
+        </div>
+    </div>
+
+</body>
+</html>
