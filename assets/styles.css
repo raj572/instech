@@ -11,6 +11,7 @@ body {
     color: var(--text-color);
 }
 nav {
+    margin-top: 2%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -18,9 +19,12 @@ nav {
     background-color: var(--nav-bg-color); /* Background color changes with theme */
 }
 
-.logo img {
-    height: 50px;
+nav .logo h1{
+    font-size: 28px;
+    font-weight: bolder;
 }
+
+
 
 .nav-links {
     display: flex;
@@ -34,8 +38,13 @@ nav {
 .nav-links a {
     text-decoration: none;
     color: var(--text-color) !important; /* Ensure text color changes with theme */
-    font-weight: 500;
+    font-weight: 600;
+    text-transform: uppercase;
     transition: color 0.3s ease;
+}
+.nav-links a:hover{
+    font-weight: 100;
+    
 }
 
 #theme-toggle-btn {
@@ -80,6 +89,10 @@ nav {
         transition: transform 0.5s ease-in-out;
         z-index: 9;
         border: 1px solid var(--text-color);
+    }
+    nav .logo h1{
+        font-size: 20px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
     .nav-links.open {
@@ -217,6 +230,15 @@ nav {
     background-color: var(--text-color); /* Use theme text color for header background */
     color: var(--background-color); /* Use theme background color for header text */
     transition: background-color 0.5s, color 0.5s; /* Smooth transition for header color changes */
+}
+.chatbot-header .bot{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.chatbot-header img{
+    height: 40px;
+    border-radius: 50%;
 }
 
 .chatbot-body {
@@ -359,6 +381,9 @@ nav {
 
     .chatbot-header {
         padding: 10px 15px; /* Adjust padding for better fit on mobile */
+    }
+    .chatbot-header img{
+        height: 30px;
     }
 
     .chatbot-body {
@@ -514,12 +539,14 @@ nav {
 }
 
 .light-mode .cta-button {
-    background-color: #ff4081; /* Light mode button color */
-    color: #fff;
+    background-color: var(--text-color); /* Blue theme button color */
+    color: var(--background-color);
 }
 
 .light-mode .cta-button:hover {
-    background-color: #e73370; /* Light mode button hover color */
+    background-color: var(--background-color); /* Blue theme button color */
+    color: var(--text-color); /* Light mode button hover color */
+    border: 1px solid var(--text-color);
 }
 
 /* Dark Mode */
@@ -532,12 +559,14 @@ nav {
 }
 
 .dark-mode .cta-button {
-    background-color: #6200ea; /* Dark mode button color */
-    color: #fff;
+    background-color: var(--text-color); /* Blue theme button color */
+    color: var(--background-color);
 }
 
 .dark-mode .cta-button:hover {
-    background-color: #3700b3; /* Dark mode button hover color */
+    background-color: var(--background-color); /* Blue theme button color */
+    color: var(--text-color); /* Light mode button hover color */
+    border: 1px solid var(--text-color);
 }
 
 /* Theme Blue */
@@ -550,12 +579,14 @@ nav {
 }
 
 .theme-blue .cta-button {
-    background-color: #1e88e5; /* Blue theme button color */
-    color: #fff;
+    background-color: var(--text-color); /* Blue theme button color */
+    color: var(--background-color);
 }
 
 .theme-blue .cta-button:hover {
-    background-color: #1565c0; /* Blue theme button hover color */
+    background-color: var(--background-color); /* Blue theme button color */
+    color: var(--text-color); /* Light mode button hover color */
+    border: 1px solid var(--text-color);
 }
 
 /* Theme Green */
@@ -568,12 +599,14 @@ nav {
 }
 
 .theme-green .cta-button {
-    background-color: #c4dbc5; /* Green theme button color */
-    color: #1f420e;
+    background-color: var(--text-color); /* Blue theme button color */
+    color: var(--background-color);
 }
 
 .theme-green .cta-button:hover {
-    background-color: #388e3c; /* Green theme button hover color */
+    background-color: var(--background-color); /* Blue theme button color */
+    color: var(--text-color); /* Light mode button hover color */
+    border: 1px solid var(--text-color);
 }
 
 /* Responsive Styles */

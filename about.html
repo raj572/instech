@@ -3,17 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
-    <link rel="stylesheet" href="assets\styles.css">
+    <title>About Us - INSTECH</title>
+    <link rel="stylesheet" href="assets/styles.css">
     <link rel="stylesheet" href="assets/animation.css">
     <link rel="stylesheet" href="assets/theme.css">
     <link rel="stylesheet" href="assets/chatbox.css">
+    <style>
+        /* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* About Section */
+.about-section {
+    padding: 50px 20px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: all 0.5s ease-in-out;
+}
+
+.about-section h2, .about-section h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s forwards;
+}
+
+.about-section p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s forwards;
+    animation-delay: 0.2s;
+}
+
+/* Team Section */
+.team {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    opacity: 0;
+    animation: fadeIn 0.8s forwards;
+    animation-delay: 0.4s;
+}
+
+.team-member {
+    flex: 1 1 calc(33% - 40px);
+    background-color: var(--background-color);
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.team-member h4 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.team-member p {
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+/* Contact Section */
+.about-section h3, .about-section p {
+    margin-bottom: 15px;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .team-member {
+        flex: 1 1 calc(50% - 20px);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .team-member {
+        flex: 1 1 100%;
+    }
+
+    .about-section h2, .about-section h3 {
+        font-size: 1.5rem;
+    }
+
+    .about-section p {
+        font-size: 1rem;
+    }
+}
+
+    </style>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
     <nav>
         <div class="logo">
-            <img src="assets/logo2.png" alt="Logo">
+           <h1>INSTECH</h1>
         </div>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
@@ -30,8 +158,50 @@
             <div></div>
         </div>
     </nav>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <h2>About INSTECH</h2>
+            <p>Welcome to INSTECH, your trusted partner in the IT industry. We specialize in providing top-notch digital IT services, election data management, digital marketing, and much more. Our goal is to empower businesses with innovative solutions that drive success and growth.</p>
+
+            <h3>Our Purpose</h3>
+            <p>At INSTECH, we are committed to delivering quality services that meet the unique needs of our clients. Our purpose is to bridge the gap between technology and business, offering customized solutions that help organizations stay ahead in a competitive market.</p>
+
+            <h3>Our Values</h3>
+            <ul>
+                <li><strong>Innovation:</strong> We believe in continuous innovation to provide the best solutions for our clients.</li>
+                <li><strong>Quality:</strong> Quality is at the core of everything we do. We ensure that our services are delivered with excellence and precision.</li>
+                <li><strong>Integrity:</strong> We maintain the highest standards of integrity in all our interactions and business dealings.</li>
+                <li><strong>Customer Focus:</strong> Our clients are our top priority, and we work tirelessly to meet and exceed their expectations.</li>
+            </ul>
+
+            <h3>Meet Our Team</h3>
+            <div class="team">
+                <div class="team-member">
+                    <h4>John Doe</h4>
+                    <p><em>CEO & Founder</em></p>
+                    <p>John is the visionary behind INSTECH, with over 20 years of experience in the IT industry. His leadership and strategic insights have been instrumental in the company's growth.</p>
+                </div>
+                <div class="team-member">
+                    <h4>Jane Smith</h4>
+                    <p><em>Chief Technology Officer</em></p>
+                    <p>Jane leads the technical team with a passion for innovation. She ensures that INSTECH stays at the forefront of technology and delivers cutting-edge solutions.</p>
+                </div>
+                <div class="team-member">
+                    <h4>Michael Brown</h4>
+                    <p><em>Head of Digital Marketing</em></p>
+                    <p>Michael is responsible for driving our digital marketing strategies. His expertise in the field helps our clients achieve significant online growth and visibility.</p>
+                </div>
+            </div>
+
+            <h3>Contact Us</h3>
+            <p>If you'd like to learn more about our services or discuss how we can assist your business, feel free to reach out to us. We look forward to partnering with you on your journey to success.</p>
+        </div>
+    </section>
+
     <script src="assets/script.js"></script>
-<script src="assets/theme.js"></script>
-<script src="assets/chatbox.js"></script>
+    <script src="assets/theme.js"></script>
+    <script src="assets/chatbox.js"></script>
 </body>
 </html>
