@@ -23,7 +23,11 @@ document.addEventListener('DOMContentLoaded', () => {
             // Simulate bot response (replace with actual response logic if necessary)
             setTimeout(() => {
                 const botMessage = getBotResponse(message);
-                sendMessage(botMessage, false);
+                if (message.toLowerCase().includes('tell me a joke')) {
+                    fetchJoke();  // Fetch a random joke
+                } else {
+                    sendMessage(botMessage, false);
+                }
             }, 500);
         }
 
@@ -38,11 +42,9 @@ document.addEventListener('DOMContentLoaded', () => {
             return "Hello! How can I assist you today?";
         } else if (message.includes('services')) {
             return "We offer services including video and photo editing, logo design, website development, and social media management. What would you like to know more about?";
-        } else if(message.includes("How are you?")){
-            return "I'm doing well, thank you for asking! How can I assist you today?";
-        }
-        
-        else if (message.includes('video editing')) {
+        } else if (message.includes('how are you')) {
+            return "I'm a bot, so I don't have feelings, but thanks for asking!";
+        } else if (message.includes('video editing')) {
             return "Our video editing service includes editing, color correction, and adding effects. You can check out examples on our portfolio page.";
         } else if (message.includes('photo editing')) {
             return "We offer photo retouching, color correction, and creative edits. Feel free to ask for specific examples!";
@@ -63,6 +65,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    function fetchJoke() {
+        fetch('https://official-joke-api.appspot.com/random_joke')
+            .then(response => response.json())
+            .then(data => {
+                const joke = `${data.setup} ${data.punchline}`;
+                sendMessage(joke, false);
+            })
+            .catch(error => {
+                sendMessage("Sorry, I couldn't fetch a joke at the moment. Please try again later.", false);
+            });
+    }
+
     function updateChatboxHeight() {
         const minHeight = 300; // Initial height in pixels
         const maxHeight = window.innerHeight * 0.5; // 50% of viewport height
@@ -81,8 +95,8 @@ document.addEventListener('DOMContentLoaded', () => {
     suggestionBtns.forEach(button => {
         button.addEventListener('click', () => {
             const suggestionText = button.textContent;
+            userInput.value = ''; // Ensure input field is clear before sending
             sendMessage(suggestionText); // Send the suggestion as a message
-            userInput.value = ''; // Clear the input field
             updateChatboxHeight();
         });
     });
