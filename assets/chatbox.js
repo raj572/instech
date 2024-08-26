@@ -127,3 +127,5 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial height adjustment
     updateChatboxHeight();
 });
+
+
