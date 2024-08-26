@@ -366,6 +366,7 @@ input:-ms-input-placeholder {
     font-size: 0.9rem;
 }
 
+
 /* For Edge */
 input::-ms-input-placeholder {
     color: var(--text-color);
@@ -494,7 +495,7 @@ input::-ms-input-placeholder {
 
     .service-card p {
         font-size: 1em; /* Adjust font size for better readability */
-        color: #555;
+        color: var(--text-color);
     }
 }
 /* Toggle Button */

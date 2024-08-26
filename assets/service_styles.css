@@ -198,7 +198,7 @@ nav .logo h1{
 }
 
 .service-card p {
-    color: #555;
+    color: var(--text-color);
 }
 
 /* Chatbot Container */
@@ -468,7 +468,7 @@ nav .logo h1{
 
     .service-card p {
         font-size: 1em; /* Adjust font size for better readability */
-        color: #555;
+        color: var(--text-color);
     }
 }
 /* Toggle Button */
