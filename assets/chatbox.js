@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateChatboxHeight() {
         const minHeight = 300; // Initial height in pixels
-        const maxHeight = window.innerHeight * 0.9; // 50% of viewport height
+        const maxHeight = window.innerHeight * 0.9; // 90% of viewport height
 
         // Update the chatbox height based on the content
         const contentHeight = chatbotBody.scrollHeight;
@@ -90,6 +90,14 @@ document.addEventListener('DOMContentLoaded', () => {
         sendMessage(userInput.value);
         userInput.value = '';  // Clear input field
         updateChatboxHeight();
+    });
+
+    userInput.addEventListener('keypress', (event) => {
+        if (event.key === 'Enter') {
+            sendMessage(userInput.value);
+            userInput.value = '';  // Clear input field
+            updateChatboxHeight();
+        }
     });
 
     suggestionBtns.forEach(button => {
