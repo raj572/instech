@@ -38,7 +38,11 @@ document.addEventListener('DOMContentLoaded', () => {
             return "Hello! How can I assist you today?";
         } else if (message.includes('services')) {
             return "We offer services including video and photo editing, logo design, website development, and social media management. What would you like to know more about?";
-        } else if (message.includes('video editing')) {
+        } else if(message.includes("How are you?")){
+            return "I'm doing well, thank you for asking! How can I assist you today?";
+        }
+        
+        else if (message.includes('video editing')) {
             return "Our video editing service includes editing, color correction, and adding effects. You can check out examples on our portfolio page.";
         } else if (message.includes('photo editing')) {
             return "We offer photo retouching, color correction, and creative edits. Feel free to ask for specific examples!";
