@@ -119,26 +119,82 @@
   opacity: 0.6;
   transform: translate(10px, -10px);
 }
+
 /* Media queries for responsiveness */
 @media (max-width: 768px) {
   .card {
     position: fixed;
-    left: 0;
-    bottom: 3%;
-    width: 20%;
-    flex-direction: column;
-    padding: 1rem;
+    left: 20%;
+    bottom: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row; /* Horizontal layout */
+    padding: 0.5rem; /* Decreased padding */
   }
 
   .card ul {
-    flex-direction: row;
+    display: flex;
+    flex-direction: row; /* Horizontal layout for list items */
+    gap: 0.5rem; /* Decreased gap */
+    padding: 0; /* Adjust padding */
+    margin: 0; /* Adjust margin */
   }
 
   .card ul li {
-    flex: 1 1 30%;
-    margin: 0.5rem;
+    flex: 1 1 auto;
+    margin: 0.25rem; /* Decreased margin */
+  }
+
+  .svg {
+    height: 30px; /* Decreased size */
+    width: 30px;  /* Decreased size */
+    padding: 0.5rem; /* Adjust padding */
+  }
+
+  .text {
+    font-size: 0.8rem; /* Smaller text size */
+    padding: 2px; /* Adjust padding */
+  }
+
+  .iso-pro span {
+    height: 30px; /* Decreased size */
+    width: 30px;  /* Decreased size */
   }
 }
+
+@media (max-width: 480px) {
+  .card {
+    padding: 0.25rem; /* Further decreased padding */
+  }
+
+  .card ul {
+    gap: 0.25rem; /* Further decreased gap */
+  }
+
+  .card ul li {
+    margin: 0.1rem; /* Further decreased margin */
+  }
+
+  .svg {
+    height: 25px; /* Further decreased size */
+    width: 25px;  /* Further decreased size */
+    padding: 0.25rem; /* Adjust padding */
+  }
+
+  .text {
+    font-size: 0.7rem; /* Further smaller text size */
+    padding: 1px; /* Adjust padding */
+  }
+
+  .iso-pro span {
+    height: 25px; /* Further decreased size */
+    width: 25px;  /* Further decreased size */
+  }
+}
+
+
+
 
 
 
