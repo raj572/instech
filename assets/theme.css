@@ -45,8 +45,8 @@
     transition: 0.5s;
 }
 
-.theme-pink {
-    --background-color: #FF00BF;
+.theme-green{
+    --background-color: #006A4E;
     --text-color: #fff;
     transition: 0.5s;
 }

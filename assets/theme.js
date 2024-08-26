@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (currentTheme === 'dark-mode') {
             currentTheme = 'theme-yellow'; // Example of a color theme
         } else if (currentTheme === 'theme-yellow') {
-            currentTheme = 'theme-pink'; // Another color theme
+            currentTheme = 'theme-green'; // Another color theme
         } else {
             currentTheme = 'light-mode'; // Default back to light mode
         }
@@ -41,9 +41,10 @@ document.addEventListener('DOMContentLoaded', () => {
             case 'theme-yellow':
                 themeIcon.textContent = '🟡'; // Yellow circle for color theme
                     break;
-            case 'theme-pink':
-                themeIcon.textContent = '🌸'; // Pink flower for color theme
-                    break;
+            case 'theme-bottle-green':
+                themeIcon.textContent = '💚'; // Green heart for bottle green theme
+                        break;
+                    
                     
             default:
                 themeIcon.textContent = '🌙'; // Default icon
@@ -64,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 case 'theme-yellow':
                     link.style.color = '#0000ff'; // Blue color for blue theme
                     break;
-                case 'theme-pink':
+                case 'theme-green':
                     link.style.color = '#00ff00'; // Green color for green theme
                     break;
                 default:
