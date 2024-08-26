@@ -91,13 +91,6 @@ document.addEventListener('DOMContentLoaded', () => {
         userInput.value = '';  // Clear input field
         updateChatboxHeight();
     });
-    //Enter press send logic
-    document.getElementById("chatInput").addEventListener("keypress", function(event) {
-    if (event.key === "Enter") {
-        event.preventDefault(); // Prevent the default form submission
-        document.getElementById("sendButton").click(); // Programmatically click the send button
-    }
-});
 
     userInput.addEventListener('keypress', (event) => {
         if (event.key === 'Enter') {
