@@ -77,8 +77,8 @@ document.addEventListener('DOMContentLoaded', () => {
     suggestionBtns.forEach(button => {
         button.addEventListener('click', () => {
             const suggestionText = button.textContent;
-            userInput.value = ''; // Ensure input field is clear before sending
             sendMessage(suggestionText); // Send the suggestion as a message
+            userInput.value = ''; // Clear the input field
             updateChatboxHeight();
         });
     });
