@@ -39,14 +39,14 @@
     transition: 0.5s;
 }
 
-.theme-blue {
-    --background-color: #17d6f0;
+.theme-yellow {
+    --background-color: #FFD700;
     --text-color: #000000;
     transition: 0.5s;
 }
 
-.theme-green {
-    --background-color: #28a745;
+.theme-pink {
+    --background-color: #FF00BF;
     --text-color: #fff;
     transition: 0.5s;
 }

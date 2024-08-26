@@ -16,9 +16,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (currentTheme === 'light-mode') {
             currentTheme = 'dark-mode';
         } else if (currentTheme === 'dark-mode') {
-            currentTheme = 'theme-blue'; // Example of a color theme
-        } else if (currentTheme === 'theme-blue') {
-            currentTheme = 'theme-green'; // Another color theme
+            currentTheme = 'theme-yellow'; // Example of a color theme
+        } else if (currentTheme === 'theme-yellow') {
+            currentTheme = 'theme-pink'; // Another color theme
         } else {
             currentTheme = 'light-mode'; // Default back to light mode
         }
@@ -38,12 +38,13 @@ document.addEventListener('DOMContentLoaded', () => {
             case 'dark-mode':
                 themeIcon.textContent = '🌞'; // Sun icon for light mode
                 break;
-            case 'theme-blue':
-                themeIcon.textContent = '🔵'; // Blue circle for color theme
-                break;
-            case 'theme-green':
-                themeIcon.textContent = '🟢'; // Green circle for color theme
-                break;
+            case 'theme-yellow':
+                themeIcon.textContent = '🟡'; // Yellow circle for color theme
+                    break;
+            case 'theme-pink':
+                themeIcon.textContent = '🌸'; // Pink flower for color theme
+                    break;
+                    
             default:
                 themeIcon.textContent = '🌙'; // Default icon
                 break;
@@ -60,11 +61,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 case 'dark-mode':
                     link.style.color = '#17d6f0'; // Color for dark mode
                     break;
-                case 'theme-blue':
-                    link.style.color = '#000'; // Blue color for blue theme
+                case 'theme-yellow':
+                    link.style.color = '#0000ff'; // Blue color for blue theme
                     break;
-                case 'theme-green':
-                    link.style.color = '#000'; // Green color for green theme
+                case 'theme-pink':
+                    link.style.color = '#00ff00'; // Green color for green theme
                     break;
                 default:
                     link.style.color = 'rgb(12, 107, 99)'; // Default color
