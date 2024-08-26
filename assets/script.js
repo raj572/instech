@@ -30,3 +30,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+
+function loadContent() {
+    fetch('social.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('content-placeholder').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading content:', error));
+}
+
+loadContent(); // Call the function to load content
+
+
