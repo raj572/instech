@@ -19,8 +19,8 @@
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="service.html">Services</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/contact">Contact</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
         <button id="theme-toggle-btn" aria-label="Toggle theme">
             <span id="theme-icon">🌙</span>
@@ -35,7 +35,7 @@
         <div class="hero-content">
             <h1>Transform Your Digital Presence with Instach</h1>
             <p>Your one-stop solution for all IT services, from web development and digital marketing to video and photo editing. Let us help you make an impact online.</p>
-            <a href="#services" class="cta-button">Explore Our Services</a>
+            <a href="service.html" class="cta-button">Explore Our Services</a>
         </div>
     </section>
     <div id="loading" class="loading">
@@ -47,7 +47,6 @@
     
  
     <!-- Chatbot UI -->
-   
     <div class="chatbot-container fade-in chatbox-container">
         <div class="chatbot-header">
             <h3>Chatbot</h3>
@@ -66,10 +65,11 @@
             <button id="send-btn">Send</button>
         </div>
     </div>
-
-    <button id="toggle-chat-btn" style="position: fixed; bottom: 20px; right: 20px; background-color: #333; color: white; border: none; border-radius: 50%; width: 50px; height: 50px; font-size: 20px; cursor: pointer;">
+    
+    <button id="toggle-chat-btn" style="position: fixed; bottom: 20px; right: 20px; background-color: var(--text-color); color: var(--background-color); border: none; border-radius: 50%; width: 50px; height: 50px; font-size: 20px; cursor: pointer;">
         Chat
     </button>
+    
 
     <!-- JavaScript -->
     <script src="{{ url_for('static', filename='chatbot.js') }}"></script>

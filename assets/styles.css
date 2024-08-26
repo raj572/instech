@@ -190,18 +190,21 @@ nav {
 /* Chatbot Container */
 .chatbot-container {
     position: fixed;
-    bottom: 10%;
+    bottom: 0;
     right: 20px;
     width: 350px;
+    background: transparent;
+    backdrop-filter: blur(20px);
     height: 300px; /* Initial height for mobile view */
-    background-color: white;
+    background-color: rgba(5, 2, 5, 0.3); /* Use theme background color */
+    color: var(--text-color); /* Use theme text color */
     border: 1px solid #ccc;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    transition: height 0.3s ease; /* Smooth transition for height change */
+    transition: height 0.3s ease, background-color 0.5s, color 0.5s; /* Smooth transition for height, background, and text color changes */
 }
 
 .chatbot-header {
@@ -211,6 +214,9 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: var(--text-color); /* Use theme text color for header background */
+    color: var(--background-color); /* Use theme background color for header text */
+    transition: background-color 0.5s, color 0.5s; /* Smooth transition for header color changes */
 }
 
 .chatbot-body {
@@ -228,16 +234,18 @@ nav {
     border-radius: 5px;
     margin-bottom: 10px;
     max-width: 80%;
+    color: var(--text-color); /* Use theme text color */
 }
 
 .user-message {
-    background-color: #17d6f0;
+    background-color:var(--text-color);
+    color: var(--background-color);
     align-self: flex-end; /* Right alignment */
     text-align: right;
 }
 
 .bot-message {
-    background-color: #f1f4f5;
+    background-color: var(--background-color); /* Use theme background color */
     align-self: flex-start; /* Left alignment */
     text-align: left;
 }
@@ -253,26 +261,33 @@ nav {
     margin-right: auto;
 }
 
-/* Suggestions */
 .chatbot-suggestions {
     padding: 10px;
     border-top: 1px solid #ccc;
     display: flex;
     flex-wrap: wrap; /* Allow buttons to wrap if necessary */
+    background-color: var(--background-color); /* Use theme background color */
+    color: var(--text-color); /* Use theme text color */
 }
 
 .suggestion-btn {
-    background-color: #eee;
+    background-color:var(--text-color);
     border: 1px solid #ccc;
+    color: var(--background-color);
     padding: 8px 12px;
     margin-right: 5px;
     border-radius: 5px;
     cursor: pointer;
     margin-bottom: 5px;
+    font-size: 12px;
+    color: var(--background-color); /* Explicitly set text color */
+    transition: 0.3s;
 }
 
 .suggestion-btn:hover {
-    background-color: #ddd;
+    background-color: var(--text-color);
+    color: var(--nav-hover-color);/* Ensure text color is still visible on hover */
+    background-color: var(--background-color);
 }
 
 /* Chatbot Input */
@@ -280,6 +295,8 @@ nav {
     display: flex;
     padding: 10px;
     border-top: 1px solid #ccc;
+    background-color: var(--background-color); /* Use theme background color */
+    color: var(--text-color); /* Use theme text color */
 }
 
 .chatbot-input input {
@@ -288,11 +305,13 @@ nav {
     border: 1px solid #ccc;
     border-radius: 5px;
     margin-right: 10px;
+    background-color: var(--background-color); /* Use theme background color */
+    color: var(--text-color); /* Use theme text color */
 }
 
 .chatbot-input button {
-    background-color: #333;
-    color: white;
+    background-color: var(--text-color); /* Use theme text color */
+    color: var(--background-color); /* Use theme background color */
     border: none;
     padding: 10px;
     border-radius: 5px;
@@ -303,14 +322,14 @@ nav {
     background-color: #555;
 }
 
-/* Add to your CSS */
+/* Open Chat Button */
 .open-chat-btn {
     position: fixed;
     bottom: 20px;
     right: 20px;
     padding: 10px 20px;
-    background-color: #333;
-    color: white;
+    background-color: var(--text-color); /* Use theme text color */
+    color: var(--background-color); /* Use theme background color */
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -325,24 +344,84 @@ nav {
 #close-btn {
     background: none;
     border: none;
-    color: white;
+    color: var(--background-color); /* Use theme background color */
     font-size: 20px;
     cursor: pointer;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
+
+@media (max-width: 480px) {
     .chatbot-container {
-        width: 80%;
-        height: 300px; /* Initial height for mobile view */
-        bottom: 10%;
+        width: 100%; /* Full width on mobile */
         right: 0;
-        border-radius: 0;
+        border-radius: 0; /* Remove border-radius for full-width effect */
+    }
+
+    .chatbot-header {
+        padding: 10px 15px; /* Adjust padding for better fit on mobile */
     }
 
     .chatbot-body {
-        max-height: calc(300px - 70px); /* Adjust based on header and input size */
+        padding: 10px;
     }
+
+    .suggestion-btn {
+        font-size: 10px; /* Adjust button font size */
+        padding: 6px 10px; /* Adjust button padding */
+        margin-bottom: 5px;
+    }
+
+    .chatbot-input input {
+        padding: 8px; /* Adjust input padding */
+    }
+
+    .chatbot-input button {
+        padding: 8px; /* Adjust button padding */
+    }
+
+    /* Adjust toggle chat button for mobile */
+    #toggle-chat-btn {
+        bottom: 10px;
+        right: 10px;
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+}
+
+/* Further adjustments for tablet view */
+@media (min-width: 481px) and (max-width: 768px) {
+    .chatbot-container {
+        width: 80%; /* Larger width for tablets */
+        right: 10%;
+        height: 400px; /* Adjust height for tablets */
+    }
+
+    .chatbot-header {
+        padding: 10px 20px;
+    }
+
+    .chatbot-body {
+        padding: 15px;
+    }
+
+    .chatbot-input input {
+        padding: 10px;
+    }
+
+    .chatbot-input button {
+        padding: 10px;
+    }
+
+    .suggestion-btn {
+        font-size: 11px;
+        padding: 7px 12px;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+
 
     .service-card {
         width: calc(100% - 20px); /* Full width minus some margin */
