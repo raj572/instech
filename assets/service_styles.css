@@ -628,3 +628,14 @@ nav .logo h1{
         margin-top: 10%;
     }
 }
+::-webkit-scrollbar{
+    width: 5px;
+}
+
+::-webkit-scrollbar-track{
+    background-color: var(--text-color);
+}
+::-webkit-scrollbar-thumb{
+    background-color: var(--background-color);
+    border-radius: 10px;
+}
