@@ -641,6 +641,23 @@ nav .logo h1{
 }
 
 
+h1::selection {
+    background: var(--text-color);
+    color: var(--background-color);
+ }
+ h2::selection {
+    background: var(--text-color);
+    color: var(--background-color);
+ }
+ p::selection {
+    background: var(--text-color);
+    color: var(--background-color);
+ }
+ a::selection {
+    background: var(--text-color);
+    color: var(--background-color);
+ }
+
 .heading{
     text-align: center;
     font-size: 35px;
